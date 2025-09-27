@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E9EBD6"
+    tools:context=".IngredientDetailsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/ingredientImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            tools:srcCompat="@drawable/glycolic_acid" />
+
+        <TextView
+            android:id="@+id/ingredientName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/satisfy"
+            android:textAlignment="center"
+            android:textColor="#36421E"
+            android:textSize="32sp"
+            tools:text="Glycolic Acid" />
+
+        <TextView
+            android:id="@+id/benefitsLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Benefits"
+            android:textStyle="bold"
+            android:textColor="#36421E"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/benefitsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="#36421E"
+            android:textSize="16sp"
+            tools:text="Exfoliates skin, improves texture, and reduces fine lines." />
+
+        <TextView
+            android:id="@+id/usageLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Usage Tips"
+            android:textStyle="bold"
+            android:textColor="#36421E"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/usageText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="#36421E"
+            android:textSize="16sp"
+            tools:text="Start with a low concentration and use 2-3 times per week. Always use sunscreen the following day." />
+
+        <TextView
+            android:id="@+id/safetyLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Safety Details"
+            android:textStyle="bold"
+            android:textColor="#36421E"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/safetyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="#36421E"
+            android:textSize="16sp"
+            tools:text="Generally safe, but may cause irritation or increased sun sensitivity for some users." />
+
+    </LinearLayout>
+</ScrollView>
