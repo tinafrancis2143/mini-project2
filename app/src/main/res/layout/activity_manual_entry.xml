@@ -1,106 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E9EBD6"
-    android:padding="24dp"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_background"
     tools:context=".ManualEntryActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_manual_entry"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title="Manual Entry"
+        app:titleTextColor="#4E4E4E" />
+
     <TextView
-        android:id="@+id/manual_title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:text="Type or paste the ingredients below, separated by commas."
         android:fontFamily="@font/satisfy"
-        android:text="Enter Product Manually"
-        android:textColor="#36421E"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:padding="16dp"
+        android:gravity="center"
+        android:textColor="#555555"
+        android:textSize="16sp"/>
 
-    <TextView
-        android:id="@+id/manual_subtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Please enter the details below"
-        android:textColor="#A09E96"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/manual_title" />
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp">
 
-    <LinearLayout
-        android:id="@+id/input_fields"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/manual_subtitle">
-
-        <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_ingredients_input"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:boxStrokeColor="#30452C"
-            app:hintTextColor="#32492E">
+            android:layout_height="match_parent"
+            android:gravity="top|start"
+            android:hint="e.g., Aqua, Glycerin, Sodium Chloride..."
+            android:inputType="textMultiLine"
+            android:padding="16dp"
+            android:background="@android:color/transparent"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/manual_product_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Product Name"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.card.MaterialCardView>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:boxStrokeColor="#30452C"
-            app:hintTextColor="#32492E">
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_analyze_manual"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="16dp"
+        android:text="Analyze Ingredients"
+        android:textSize="18sp"
+        app:cornerRadius="12dp"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/manual_brand"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Brand Name"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:boxStrokeColor="#30452C"
-            app:hintTextColor="#32492E">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/manual_ingredients"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Ingredients (comma-separated)"
-                android:inputType="textMultiLine" />
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/manual_submit_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#30452C"
-        android:paddingVertical="16dp"
-        android:text="Check Ingredients"
-        android:textColor="#F1F0E4"
-        app:cornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="24dp" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

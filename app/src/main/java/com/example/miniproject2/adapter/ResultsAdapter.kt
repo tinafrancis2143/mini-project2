@@ -54,16 +54,17 @@ class ResultsAdapter(
         holder.ingredientScore.text = score.toString()
 
         // 4. Set the color of the score and the indicator circle based on the score value
+        // 4. Set the color of the score and the indicator circle based on your 0-5 scale
         when (score) {
-            in 0..2 -> { // Low hazard (Green)
+            in 0..1 -> { // Low Concern (Green)
                 holder.ingredientScore.setTextColor(ContextCompat.getColor(holder.itemView.context, R.color.green))
                 holder.scoreIndicator.setBackgroundResource(R.drawable.circle_background_green)
             }
-            in 3..6 -> { // Moderate hazard (Yellow)
+            in 2..3 -> { // Moderate Concern (Yellow)
                 holder.ingredientScore.setTextColor(ContextCompat.getColor(holder.itemView.context, R.color.yellow))
                 holder.scoreIndicator.setBackgroundResource(R.drawable.circle_background_yellow)
             }
-            else -> { // High hazard (Red)
+            else -> { // 4-5 and above, High Concern (Red)
                 holder.ingredientScore.setTextColor(ContextCompat.getColor(holder.itemView.context, R.color.red))
                 holder.scoreIndicator.setBackgroundResource(R.drawable.circle_background_red)
             }

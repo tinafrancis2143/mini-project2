@@ -4,35 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F1F0E4"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:background="@drawable/gradient_background"
     tools:context=".ResultsActivity">
 
-    <TextView
-        android:id="@+id/tv_results_title"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_results"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title="Analysis Results"
+        app:titleTextColor="#4E4E4E" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_overall_score"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="16dp"
-        android:text="Analysis Results"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Overall Product Score"
+                android:fontFamily="@font/satisfy"
+                android:textSize="18sp"
+                android:textColor="?android:attr/textColorPrimary"/>
+
+            <TextView
+                android:id="@+id/tv_overall_score_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/satisfy"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                tools:text="5.7"
+                tools:textColor="@color/yellow"/>
+
+            <TextView
+                android:id="@+id/tv_overall_summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/satisfy"
+                android:textSize="16sp"
+                tools:text="Moderate Concern" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <TextView
         android:id="@+id/tv_selected_category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/satisfy"
+        android:textColor="#666666"
         android:textSize="16sp"
-        tools:text="Category: Face" />
+        tools:text="Analysis for: Face" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_ingredients_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:paddingHorizontal="12dp"
+        android:clipToPadding="false"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_ingredient_result" />
 
