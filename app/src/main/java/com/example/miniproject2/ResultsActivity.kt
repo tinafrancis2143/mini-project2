@@ -66,9 +66,8 @@ class ResultsActivity : AppCompatActivity() {
         }
     }
 
-    /**
-     * Calculates the overall product score using the Hybrid Method and updates the UI.
-     */
+    //Calculates the overall product score using the Hybrid Method and updates the UI.
+
     private fun displayOverallProductScore(ingredients: List<Ingredient>, category: String) {
         val scoreValueTextView: TextView = findViewById(R.id.tv_overall_score_value)
         val summaryTextView: TextView = findViewById(R.id.tv_overall_summary)
@@ -113,9 +112,9 @@ class ResultsActivity : AppCompatActivity() {
         scoreValueTextView.setTextColor(ContextCompat.getColor(this, colorRes))
     }
 
-    /**
-     * Helper function to get the correct score based on the selected category.
-     */
+
+     // Helper function to get the correct score based on the selected category.
+
     private fun getScoreForCategory(ingredient: Ingredient, category: String): Int {
         return when (category.lowercase()) {
             "face" -> ingredient.skinScore

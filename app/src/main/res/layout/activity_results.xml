@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/gradient_background"
+    android:backgroundTint="#F1F0E4"
+    android:orientation="vertical"
     tools:context=".ResultsActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -26,33 +27,36 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#EBDCDB"
+            android:gravity="center"
             android:orientation="vertical"
-            android:padding="20dp"
-            android:gravity="center">
+            android:padding="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Overall Product Score"
                 android:fontFamily="@font/satisfy"
-                android:textSize="18sp"
-                android:textColor="?android:attr/textColorPrimary"/>
+                android:text="Overall Product Score"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/tv_overall_score_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/satisfy"
+                android:textColor="#BD4747"
                 android:textSize="48sp"
                 android:textStyle="bold"
                 tools:text="5.7"
-                tools:textColor="@color/yellow"/>
+                tools:textColor="@color/yellow" />
 
             <TextView
                 android:id="@+id/tv_overall_summary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/satisfy"
+                android:textColor="#020202"
                 android:textSize="16sp"
                 tools:text="Moderate Concern" />
 
@@ -75,8 +79,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:paddingHorizontal="12dp"
         android:clipToPadding="false"
+        android:paddingHorizontal="12dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_ingredient_result" />
 

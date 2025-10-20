@@ -1,56 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="8dp"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="8dp"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="16dp"
     app:cardElevation="4dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="336dp"
+        android:layout_height="match_parent"
         android:padding="16dp">
 
+        <!-- Status Indicator Circle -->
         <View
             android:id="@+id/status_indicator"
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:background="@drawable/circle_shape"
-            android:layout_marginEnd="16dp" />
+            app:layout_constraintBottom_toBottomOf="@id/brand_text_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/product_name_text_view" />
 
-        <LinearLayout
+        <!-- Product Name -->
+        <TextView
+            android:id="@+id/product_name_text_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/satisfy"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toStartOf="@+id/days_left_text_view"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/status_indicator"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Very Long Product Name That Pushes Other Things Away" />
 
-            <TextView
-                android:id="@+id/product_name_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Product Name"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+        <!-- Brand Name -->
+        <TextView
+            android:id="@+id/brand_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/satisfy"
+            android:textColor="#757575"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/product_name_text_view"
+            app:layout_constraintStart_toEndOf="@id/status_indicator"
+            app:layout_constraintTop_toBottomOf="@id/product_name_text_view"
+            tools:text="Glowly Skincare" />
 
-            <TextView
-                android:id="@+id/brand_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Brand"
-                android:textSize="14sp" />
+        <!-- Expiry Date (Now it is back) -->
+        <TextView
+            android:id="@+id/expiry_date_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawablePadding="4dp"
+            android:fontFamily="@font/satisfy"
+            android:textColor="#757575"
+            android:textSize="12sp"
+            app:drawableStartCompat="@drawable/ic_calendar"
+            app:drawableTint="#757575"
+            app:layout_constraintStart_toStartOf="@id/product_name_text_view"
+            app:layout_constraintTop_toBottomOf="@id/brand_text_view"
+            tools:text="Expires: 31/12/2025" />
 
-            <TextView
-                android:id="@+id/expiry_date_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Expires: 12/31/2025"
-                android:textSize="14sp" />
+        <!-- Days Left Indicator -->
+        <TextView
+            android:id="@+id/days_left_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_background"
+            android:fontFamily="@font/satisfy"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:backgroundTint="#4CAF50"
+            tools:text="90 days left" />
 
-        </LinearLayout>
-
-    </LinearLayout>
-</androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

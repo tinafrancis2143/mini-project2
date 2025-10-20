@@ -29,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var tvGoToSignup: TextView
     private lateinit var progressBar: ProgressBar
 
-    private val BASE_URL = "http://192.168.1.41:8000/"
+    private val BASE_URL = "http://10.147.218.84:8000/"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
